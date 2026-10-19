@@ -51,6 +51,8 @@ cd codex-clamshell-keep-awake
 open "build/合盖工作.app"
 ```
 
+Maintainer instructions for Developer ID signing and Apple notarization are in [NOTARIZATION.md](NOTARIZATION.md). A normal `./build.sh` uses an ad-hoc signature for testing; a release must not be called notarized until Apple returns `Accepted` and the stapled artifacts pass Gatekeeper verification.
+
 ## Exact behavior
 
 | Action / state | Clamshell mode | Built-in display |

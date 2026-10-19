@@ -61,6 +61,8 @@ open "build/合盖工作.app"
 
 构建仅使用 macOS 自带的 Swift 工具链和系统框架，不需要第三方依赖。
 
+维护者的 Developer ID 签名与 Apple 公证流程见 [NOTARIZATION.md](NOTARIZATION.md)。普通 `./build.sh` 仍生成仅供测试的 ad-hoc 签名版本；只有 Apple 返回 `Accepted` 且票据装订、Gatekeeper 验证通过的包才可称为“已公证”。
+
 ## 开启与关闭的边界
 
 | 操作 / 状态 | 合盖工作 | 内置屏幕亮度 |
@@ -105,7 +107,8 @@ pmset -a disablesleep 0  +  恢复原始亮度
 
 ## 路线图
 
-- [ ] Apple Developer ID 签名与公证
+- [x] Developer ID 签名与 Apple 公证自动化流程
+- [ ] 首个 Apple 返回 `Accepted` 的正式公证版本
 - [ ] Homebrew Cask 安装
 - [ ] 可选的自定义低电量阈值
 - [ ] 更多语言

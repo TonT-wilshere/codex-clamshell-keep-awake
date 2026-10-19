@@ -10,9 +10,12 @@ ZIP_PATH="$RELEASE_DIR/${BASE_NAME}.zip"
 DMG_PATH="$RELEASE_DIR/${BASE_NAME}.dmg"
 CHECKSUM_PATH="$RELEASE_DIR/SHA256SUMS.txt"
 STAGING_DIR="$(/usr/bin/mktemp -d "${TMPDIR:-/tmp}/keep-awake-release.XXXXXX")"
+CODESIGN_IDENTITY="${CODESIGN_IDENTITY:--}"
 trap '/bin/rm -rf "$STAGING_DIR"' EXIT
 
-"$SCRIPT_DIR/build.sh" >/dev/null
+if [[ "${SKIP_BUILD:-0}" != "1" ]]; then
+  "$SCRIPT_DIR/build.sh" >/dev/null
+fi
 
 architectures="$(/usr/bin/lipo -archs "$APP_PATH/Contents/MacOS/KeepCodexAwake")"
 if [[ "$architectures" != *arm64* || "$architectures" != *x86_64* ]]; then
@@ -33,6 +36,14 @@ fi
   -ov \
   -format UDZO \
   "$DMG_PATH" >/dev/null
+
+if [[ "$CODESIGN_IDENTITY" != "-" ]]; then
+  /usr/bin/codesign \
+    --force \
+    --timestamp \
+    --sign "$CODESIGN_IDENTITY" \
+    "$DMG_PATH"
+fi
 
 (
   cd "$RELEASE_DIR"

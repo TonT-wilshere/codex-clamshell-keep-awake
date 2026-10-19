@@ -15,6 +15,7 @@ else
 fi
 MODULE_CACHE="${TMPDIR:-/tmp}/keep-codex-awake-module-cache"
 BUILD_WORK="$(/usr/bin/mktemp -d "${TMPDIR:-/tmp}/keep-awake-build.XXXXXX")"
+CODESIGN_IDENTITY="${CODESIGN_IDENTITY:--}"
 trap '/bin/rm -rf "$BUILD_WORK"' EXIT
 
 /bin/mkdir -p "$MACOS_DIR" "$RESOURCES_DIR" "$MODULE_CACHE"
@@ -101,6 +102,16 @@ done
   ic14 "$ICONSET/icon_256x256@2x.png"
 
 /usr/bin/ditto "$SCRIPT_DIR/Info.plist" "$CONTENTS_DIR/Info.plist"
-/usr/bin/codesign --force --deep --sign - "$APP_DIR"
+if [[ "$CODESIGN_IDENTITY" == "-" ]]; then
+  /usr/bin/codesign --force --deep --sign - "$APP_DIR"
+else
+  /usr/bin/codesign \
+    --force \
+    --deep \
+    --options runtime \
+    --timestamp \
+    --sign "$CODESIGN_IDENTITY" \
+    "$APP_DIR"
+fi
 
 /bin/echo "$APP_DIR"

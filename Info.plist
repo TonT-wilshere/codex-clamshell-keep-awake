@@ -28,5 +28,7 @@
     <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2026 TonT-wilshere. MIT License.</string>
 </dict>
 </plist>

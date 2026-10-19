@@ -13,6 +13,8 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v7
+      - name: Validate release scripts
+        run: zsh -n build.sh package-universal.sh notarize-release.sh
       - name: Build Universal app
         run: ./build.sh
       - name: Verify architectures and signature
