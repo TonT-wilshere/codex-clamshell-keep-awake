@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="background" x1="130" y1="90" x2="890" y2="940" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15214A"/>
+      <stop offset="0.55" stop-color="#165DDB"/>
+      <stop offset="1" stop-color="#093586"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="300" y1="260" x2="740" y2="690" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="450" y1="360" x2="590" y2="625" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C7FFF0"/>
+      <stop offset="1" stop-color="#50E3B2"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#00143F" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <rect x="64" y="64" width="896" height="896" rx="210" fill="url(#background)"/>
+  <circle cx="760" cy="255" r="250" fill="#6AA8FF" opacity="0.10"/>
+  <circle cx="220" cy="830" r="270" fill="#001F61" opacity="0.20"/>
+
+  <g filter="url(#shadow)">
+    <rect x="228" y="238" width="568" height="438" rx="58" fill="url(#screen)" stroke="#F7FAFF" stroke-width="34"/>
+    <path d="M166 708H858L823 766C811 786 789 798 766 798H258C235 798 213 786 201 766L166 708Z" fill="#F7FAFF"/>
+    <rect x="449" y="724" width="126" height="18" rx="9" fill="#165DDB" opacity="0.45"/>
+  </g>
+
+  <path d="M552 323L408 524H500L469 652L620 440H524L552 323Z" fill="url(#bolt)"/>
+  <circle cx="747" cy="273" r="49" fill="#0D3E80" opacity="0.52"/>
+  <circle cx="747" cy="273" r="32" fill="#55E6AE" stroke="#E8FFF7" stroke-width="12"/>
+</svg>

@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  universal-macos-build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Universal app
+        run: ./build.sh
+      - name: Verify architectures and signature
+        run: |
+          set -euo pipefail
+          binary="build/合盖工作.app/Contents/MacOS/KeepCodexAwake"
+          architectures="$(lipo -archs "$binary")"
+          [[ "$architectures" == *arm64* ]]
+          [[ "$architectures" == *x86_64* ]]
+          codesign --verify --deep --strict "build/合盖工作.app"

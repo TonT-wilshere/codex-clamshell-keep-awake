@@ -1,0 +1,34 @@
+name: Bug report
+description: 报告可复现的问题 / Report a reproducible problem
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢反馈。请勿提交密码、令牌或其他敏感信息。
+  - type: input
+    id: version
+    attributes:
+      label: 应用版本 / App version
+      placeholder: 1.2.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: macOS 与 Mac 型号 / Environment
+      placeholder: macOS 15.1, MacBook Air M3
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期与实际结果 / Expected and actual behavior
+    validations:
+      required: true
