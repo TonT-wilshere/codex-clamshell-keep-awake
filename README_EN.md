@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Assets/hero.svg" alt="Clamshell Awake — keep AI coding tasks running with your MacBook lid closed" width="900">
+<img src="Assets/demo.gif" alt="Clamshell Awake demo: enable, wait for green, then safely close the MacBook lid" width="900">
 
 # Clamshell Awake
 

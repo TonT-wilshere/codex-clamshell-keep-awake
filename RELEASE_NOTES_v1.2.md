@@ -1,5 +1,7 @@
 # Clamshell Awake 1.2.0 / 合盖工作 1.2.0
 
+![合盖工作演示动画 / Clamshell Awake demo animation](https://raw.githubusercontent.com/TonT-wilshere/codex-clamshell-keep-awake/413ae8e5e66a3bb6597d26b36daf2df8942d65a9/Assets/demo.gif)
+
 Keep Codex, Claude Code, terminal scripts, builds, and downloads running when you close your MacBook lid.
 
 让 Codex、Claude Code、终端脚本、构建和下载任务在 MacBook 合盖后继续运行。

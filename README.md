@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Assets/hero.svg" alt="合盖工作 — 让 AI 编程任务在 MacBook 合盖后继续运行" width="900">
+<img src="Assets/demo.gif" alt="合盖工作演示：开启后等待绿色状态，再安全合上 MacBook" width="900">
 
 # 合盖工作 · Clamshell Awake
 
