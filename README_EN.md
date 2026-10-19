@@ -20,6 +20,8 @@
 
 </div>
 
+If you searched for “keep Mac awake with lid closed,” “prevent MacBook sleep during Codex,” “Claude Code stops when the lid closes,” or “keep an AI coding agent running,” this native macOS utility is built for that exact problem.
+
 ## Why
 
 Long-running Codex and Claude Code tasks should not stop just because you close your MacBook. Clamshell Awake is a small, native macOS utility that keeps the machine awake with the lid closed, then safely restores normal sleep when you are done.
@@ -52,6 +54,22 @@ open "build/合盖工作.app"
 ```
 
 Maintainer instructions for Developer ID signing and Apple notarization are in [NOTARIZATION.md](NOTARIZATION.md). A normal `./build.sh` uses an ad-hoc signature for testing; a release must not be called notarized until Apple returns `Accepted` and the stapled artifacts pass Gatekeeper verification.
+
+## Agent Skill
+
+This repository includes a portable Agent Skill following the `SKILL.md` directory convention: [macos-clamshell-keep-awake](skills/macos-clamshell-keep-awake/SKILL.md). It helps Codex, Claude Code, and compatible agents recognize lid-close sleep problems, explain the difference between display sleep, system sleep, and shutdown, and guide users through safe installation and verification.
+
+After cloning the repository, copy the skill directory for your agent:
+
+```bash
+# Codex
+cp -R skills/macos-clamshell-keep-awake ~/.codex/skills/
+
+# Claude Code
+cp -R skills/macos-clamshell-keep-awake ~/.claude/skills/
+```
+
+See [llms.txt](llms.txt) for a concise, machine-readable project summary.
 
 ## Exact behavior
 

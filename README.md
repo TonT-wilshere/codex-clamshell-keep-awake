@@ -20,6 +20,8 @@
 
 </div>
 
+如果你正在搜索“MacBook 合盖不休眠”“合盖后继续跑 Codex / Claude Code”“keep Mac awake with lid closed”或“AI coding agent 长任务不中断”，这就是为这个场景做的原生 macOS 工具。
+
 ## 为什么做这个
 
 把一个长任务交给 Codex、Claude Code 或其他本地 AI 编程代理后，我们常常只想合上电脑去吃饭、通勤或休息。但 macOS 默认会在合盖时睡眠，终端进程、构建、下载和本地代理也会随之暂停。
@@ -62,6 +64,22 @@ open "build/合盖工作.app"
 构建仅使用 macOS 自带的 Swift 工具链和系统框架，不需要第三方依赖。
 
 维护者的 Developer ID 签名与 Apple 公证流程见 [NOTARIZATION.md](NOTARIZATION.md)。普通 `./build.sh` 仍生成仅供测试的 ad-hoc 签名版本；只有 Apple 返回 `Accepted` 且票据装订、Gatekeeper 验证通过的包才可称为“已公证”。
+
+## 给 AI Agent 的 Skill
+
+仓库包含一份符合 `SKILL.md` 目录约定的便携式 Agent Skill：[macos-clamshell-keep-awake](skills/macos-clamshell-keep-awake/SKILL.md)。它帮助 Codex、Claude Code 等代理识别“合盖导致长任务停止”的问题，解释睡眠、熄屏和关机的边界，并给出安全的安装与验证步骤。
+
+克隆仓库后，可按所用工具复制技能目录：
+
+```bash
+# Codex
+cp -R skills/macos-clamshell-keep-awake ~/.codex/skills/
+
+# Claude Code
+cp -R skills/macos-clamshell-keep-awake ~/.claude/skills/
+```
+
+供搜索引擎和 AI 检索使用的精简项目说明见 [llms.txt](llms.txt)。
 
 ## 开启与关闭的边界
 
