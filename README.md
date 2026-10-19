@@ -44,6 +44,14 @@
 | 隐私优先 | 无网络请求、无账户、无遥测，全部逻辑可审计 |
 | 通用构建 | 一个安装包同时支持 Apple Silicon 和 Intel，最低 macOS 12 |
 
+## 适用场景
+
+- Codex、Claude Code、Cursor、OpenCode、Aider、Gemini CLI 等在本机运行的 AI 编程任务。
+- Xcode、Swift、Rust、Node.js 等耗时较长的编译和测试。
+- 下载、同步、数据处理、模型推理和远程终端任务。
+
+它保护的是 **Mac 本机仍在运行的进程**，与具体 AI 产品无绑定；只要电脑没有关机或耗尽电量，任务就能继续执行。
+
 ## 下载与安装
 
 1. 前往 [Releases](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/releases/latest)，下载 Universal `.dmg`（推荐）或 `.zip`。
@@ -69,7 +77,13 @@ open "build/合盖工作.app"
 
 仓库包含一份符合 `SKILL.md` 目录约定的便携式 Agent Skill：[macos-clamshell-keep-awake](skills/macos-clamshell-keep-awake/SKILL.md)。它帮助 Codex、Claude Code 等代理识别“合盖导致长任务停止”的问题，解释睡眠、熄屏和关机的边界，并给出安全的安装与验证步骤。
 
-克隆仓库后，可按所用工具复制技能目录：
+使用开放 Agent Skills 安装器：
+
+```bash
+npx skills add TonT-wilshere/codex-clamshell-keep-awake --skill macos-clamshell-keep-awake -g
+```
+
+也可以克隆仓库后按所用工具手动复制：
 
 ```bash
 # Codex

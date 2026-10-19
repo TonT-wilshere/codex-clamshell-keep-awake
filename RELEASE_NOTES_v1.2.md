@@ -24,6 +24,8 @@ Keep Codex, Claude Code, terminal scripts, builds, and downloads running when yo
 
 This independent open-source build is not Apple-notarized yet. If macOS blocks the first launch, right-click the app in Finder and choose **Open**, or use **System Settings → Privacy & Security → Open Anyway**. Only enable clamshell work mode on a hard, ventilated surface—never put a running MacBook inside a bag.
 
+If Clamshell Awake saves a long-running job, please leave a **Star** or share the release with another MacBook user. Issues and pull requests are welcome.
+
 ## 中文
 
 ### 新功能
@@ -43,3 +45,5 @@ This independent open-source build is not Apple-notarized yet. If macOS blocks t
 ### 首次运行与安全提示
 
 这是未经 Apple 公证的独立开源构建。首次打开若被 macOS 拦截，请在 Finder 中右键应用并选择“打开”，或前往“系统设置 → 隐私与安全性 → 仍要打开”。开启合盖工作时请把 Mac 放在坚硬、通风的表面，切勿放入包中。
+
+如果它替你守住了一次长任务，欢迎点一下 **Star**，或把这个版本分享给其他 MacBook 用户。也欢迎提交 Issue 和 Pull Request。

@@ -36,6 +36,14 @@ Long-running Codex and Claude Code tasks should not stop just because you close 
 - No sudoers edits, persistent root helper, account, network request, or telemetry.
 - Universal binary for Apple Silicon and Intel; macOS 12 or newer.
 
+## Use cases
+
+- Local AI coding tasks in Codex, Claude Code, Cursor, OpenCode, Aider, Gemini CLI, and similar tools.
+- Long Xcode, Swift, Rust, Node.js, or other build and test jobs.
+- Downloads, synchronization, data processing, local inference, and remote-terminal sessions.
+
+The app protects **processes still running on the Mac**, not one specific AI product. Work continues as long as the computer is not shut down and the battery is not exhausted.
+
 ## Install
 
 1. Download the Universal `.dmg` (recommended) or `.zip` from [Releases](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/releases/latest).
@@ -59,7 +67,13 @@ Maintainer instructions for Developer ID signing and Apple notarization are in [
 
 This repository includes a portable Agent Skill following the `SKILL.md` directory convention: [macos-clamshell-keep-awake](skills/macos-clamshell-keep-awake/SKILL.md). It helps Codex, Claude Code, and compatible agents recognize lid-close sleep problems, explain the difference between display sleep, system sleep, and shutdown, and guide users through safe installation and verification.
 
-After cloning the repository, copy the skill directory for your agent:
+Install it with the open Agent Skills installer:
+
+```bash
+npx skills add TonT-wilshere/codex-clamshell-keep-awake --skill macos-clamshell-keep-awake -g
+```
+
+Or clone the repository and copy the skill directory manually:
 
 ```bash
 # Codex
