@@ -13,6 +13,10 @@
 ![Swift](https://img.shields.io/badge/Swift-native-f05138?logo=swift&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-16a34a)
 ![No telemetry](https://img.shields.io/badge/telemetry-none-7c3aed)
+[![Build](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/actions/workflows/ci.yml/badge.svg)](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/TonT-wilshere/codex-clamshell-keep-awake?color=0ea5e9)](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/TonT-wilshere/codex-clamshell-keep-awake/total?color=f59e0b)](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/releases)
+[![Stars](https://img.shields.io/github/stars/TonT-wilshere/codex-clamshell-keep-awake?style=social)](https://github.com/TonT-wilshere/codex-clamshell-keep-awake/stargazers)
 
 </div>
 
